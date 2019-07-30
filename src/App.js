@@ -35,8 +35,7 @@ class App extends React.Component {
       'jeff',
       'josh'
     ];
-    const height = `${ players.length * 60}px`;
-    // TODO: handle resizing gameboard on window resize
+    const height = `${players.length * 60}px`;
 
     return (
       <div className="App">
