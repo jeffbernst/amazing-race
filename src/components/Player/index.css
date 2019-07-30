@@ -1,0 +1,8 @@
+.player {
+  position: absolute;
+  font-size: 30px;
+}
+
+.player img {
+  height: 50px;
+}

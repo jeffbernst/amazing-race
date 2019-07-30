@@ -1,0 +1,11 @@
+.leaderboard {
+  background-color: white;
+  width: 15%;
+  border-radius: 8px;
+  position: relative;
+  margin-left: 10px;
+  font-family: Avenir, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  box-sizing: border-box;
+}

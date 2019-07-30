@@ -1,0 +1,7 @@
+.game-board {
+  background-color: white;
+  width: 50%;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+}
