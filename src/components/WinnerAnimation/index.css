@@ -1,0 +1,61 @@
+.winner-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: white;
+  animation: fadeInOut 7s ease-in-out both 0s 1;
+}
+
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.gorilla-shark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: -35px;
+  margin-left: -35px;
+}
+
+.inner {
+  animation: innerOrbit 4s linear infinite;
+}
+
+.middle {
+  animation: middleOrbit 4s linear infinite;
+}
+
+.outer {
+  animation: outerOrbit 3s linear infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  30% { opacity: 1; }
+}
+
+@keyframes innerOrbit {
+  from { transform: rotate(0deg) translateX(125px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(125px) rotate(-360deg); }
+}
+
+@keyframes middleOrbit {
+  from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(200px) rotate(360deg); }
+}
+
+@keyframes outerOrbit {
+  from { transform: rotate(0deg) translateX(275px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(275px) rotate(-360deg); }
+}

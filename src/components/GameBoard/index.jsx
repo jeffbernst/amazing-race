@@ -20,7 +20,7 @@ export class GameBoard extends React.Component {
         className="game-board"
         ref={this.gameBoard}
         onClick={this.props.startRace}
-        style={{ height: this.props.height}}
+        style={{height: this.props.height}}
       >
         {this.props.players.map((player, index) => (
           <Player

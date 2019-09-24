@@ -2,11 +2,25 @@ import React from 'react';
 import './App.css';
 import { GameBoard } from './components/GameBoard';
 import { Leaderboard } from './components/Leaderboard';
+import { WinnerAnimation } from './components/WinnerAnimation';
 
 class App extends React.Component {
+  players = [
+    'becca',
+    'andy',
+    'fred',
+    'joe',
+    'corey',
+    'robert',
+    'jeff',
+    'josh',
+    'stephen'
+  ];
+
   state = {
     running: false,
-    playerList: []
+    playerList: [],
+    showWinnerAnimation: false
   }
 
   startRace = () => {
@@ -20,28 +34,29 @@ class App extends React.Component {
     newPlayerList.push(name);
     this.setState({
       playerList: newPlayerList
+    }, () => {
+      if (this.state.playerList.length === this.players.length) {
+        this.setState({
+          showWinnerAnimation: true
+        }, () => {
+          setTimeout(() => {
+            this.setState({
+              showWinnerAnimation: false
+            })
+          }, 8000);
+        });
+      }
     });
   }
 
   render() {
-    const players = [
-      'becca',
-      'andy',
-      'fred',
-      'joe',
-      'corey',
-      'robert',
-      'wallace',
-      'jeff',
-      'josh'
-    ];
-    const height = `${players.length * 60}px`;
+    const height = `${this.players.length * 60}px`;
 
     return (
       <div className="App">
         <GameBoard
           height={height}
-          players={players}
+          players={this.players}
           running={this.state.running}
           startRace={this.startRace}
           printToLeaderboard={this.printToLeaderboard}
@@ -50,6 +65,9 @@ class App extends React.Component {
           height={height}
           playerList={this.state.playerList}
         />
+        { this.state.showWinnerAnimation &&
+          <WinnerAnimation winner={this.state.playerList[0]} />
+        }
       </div>
     );
   }
